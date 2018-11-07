@@ -44,6 +44,3 @@ Les diferents pàgines de què es composarà l'aplicació seran:
 * **Pàgina d'Administració**: L'usuari administrador podrà gestionar els diferents usuaris a través de la següent pàgina d'administració:
 
 ![Pàgina principal](imgs/admin.png)
-
-* **Pàgina d'Administració**:  L'usuari administrador podrà gestionar els diferents usuaris a través de la següent pàgina d'administració.
-
