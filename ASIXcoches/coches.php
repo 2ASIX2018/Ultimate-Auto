@@ -8,10 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
+    <title>Coches</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor_coches/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/1-col-portfolio.css" rel="stylesheet">
@@ -30,8 +30,8 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
+      <br><h1 class="my-4">
+        Estos son los Coches.
       </h1>
 
       <!-- Project One -->
@@ -40,7 +40,8 @@
           <a href="#">
             <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
           </a>
-        </div>
+         </div>
+            <br>
         <div class="col-md-5">
           <h3>Primer Coche</h3>
           <p>-Marca: SEAT</p>

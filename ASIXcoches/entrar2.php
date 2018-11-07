@@ -118,9 +118,9 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
                     <div class="float">
-                        <form class="form" action="">
+                        <form class="form" name="Logear" action="comprolog.php" method="post">
                             <div class="form-group">
-                                <label for="username" class="text-white">Username:</label><br>
+                                <label for="username" class="text-white">Login:</label><br>
                                 <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
