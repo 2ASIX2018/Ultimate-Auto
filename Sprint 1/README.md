@@ -39,7 +39,7 @@ Les diferents pàgines de què es composarà l'aplicació seran:
 
 * **Registre d’usuaris**: Ací es registraran tots aquells usuaris que vuiguen entrar en aquest foro.
 
-![Pàgina principal](imgs/usuaris.png)
+![Pàgina principal](imgs/registrar.png)
 
 * **Pàgina d'Administració**: L'usuari administrador podrà gestionar els diferents usuaris a través de la següent pàgina d'administració:
 
