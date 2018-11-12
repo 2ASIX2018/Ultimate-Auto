@@ -2,6 +2,20 @@
 <html lang="en">
 <?php
 session_start();
+$user="Anonim";
+$role="";
+
+if (isset($_SESSION['username'])) {
+    $user=$_SESSION['username'];
+    if (isset($_SESSION['role']) && $_SESSION['role']=="admin") $role="(Administrador)";
+    else $role="";
+} else if (isset($COOKIE['UltimateAutoUser'])) {
+        $_SESSION['username'] = $_COOKIE['UltimateAutoUser'];
+        if (isset($_COOKIE['UltimateAutoRole'])) $_SESSION['role'] = $_COOKIE['UltimateAutoRole'];
+        if ($_SESSION['role']=="admin") $role="(Administrador)"; else $role="";
+        $user=$_SESSION['username'];
+}
+$userLabel= $user.$role;
 ?>
 
   <head>
