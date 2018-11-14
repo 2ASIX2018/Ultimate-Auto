@@ -1,3 +1,9 @@
+<?php
+session_start();
+$usuario=$_SESSION['username'];
+$role=$_SESSION['role'];
+?>
+
 <html>
 
 <body>
@@ -12,9 +18,17 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="coches.php">Coches</a>
             </li>
-           <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="opinion.php">Opiniones</a>
-            </li> -->
+<?php
+    if ($role=='admin'){
+
+?>
+           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="puj_coches.php">administrar coches</a>
+            </li>
+<?php
+    }
+?>
+
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="entrar2.php">Entrar</a>
             </li>

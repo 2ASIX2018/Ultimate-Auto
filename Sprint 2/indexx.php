@@ -45,16 +45,18 @@ $userLabel= $user.$role;
     <header class="bg-primary text-white">
       <div class="container text-center">
         <h1>Ultimate-Auto</h1>
-        <p class="lead">Si te gustan los coches a qui encontraras todo tipo de informacion.</p>
+        <p class="lead">Si te gustan los coches a qui encontraras todo tipo de informacio.</p>
       </div>
     </header>
 
           <div class="col-lg-8 mx-auto">
-            <h2>Informacion sobre coches.</h2>
+            <h2>Per a vore esta informacio tindras que </h2>
+            <h3>Informacio sobre coches.</h3>
             <p class="lead"></p>
             <ul>
-              <li>Marcas.</li>
+                <li>Marcas.</li>
                 <li>Modelos.</li>
+                <li>Cilindra.</li>
             </ul>
           </div>
 

@@ -1,10 +1,10 @@
 <?php
 session_start();
-$_SESSION['username']=$_GET['username'];
-$_SESSION['password']=$_GET['password'];
+$_SESSION['username']=$_POST['username'];
+$_SESSION['password']=$_POST['password'];
 $usuario=$_SESSION['username'];
 $password=$_SESSION['password'];
-$recordar=$_GET['recordar'];
+$recordar=$_POST['recordar'];
 if ($usuario=="admin") {
    $_SESSION['role']="admin";
 } else { if ($usuario=="")
