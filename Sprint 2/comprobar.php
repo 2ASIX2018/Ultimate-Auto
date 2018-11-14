@@ -20,12 +20,15 @@ if ($usuario=="admin" && $password=="admin") {
 echo "Usuari registrat";
 } else {
 echo "No registrat";
-// header ("Location: indexx.php");
+ header ("Location: entrar2.php");
 };
-?>
-<html>
-<body>
-<h2> Dades recollides del formulari </h2>
 
-</body>
-</html>
+if ($usuario=="user" && $password=="user") {
+ header ("Location: indexx.php");
+} else {
+echo "No registrat";
+ header ("Location: entrar2.php");
+};
+
+?>
+
