@@ -21,7 +21,7 @@ session_start();
 <?php require_once("menu.php");  ?>
 
 <div class="container">
-<h1 class="form-heading">Asi pots afegir un coches nou.</h1>
+<h1 class="form-heading">Asi pots donar la teua opinio.</h1>
 
 <div class="main-div">
     <br>
@@ -29,24 +29,19 @@ session_start();
     <form action="comprobar.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
-            <label for="NewUserName" >Nom del coche.</label>
+            <label for="NewUserName" >Nom del usuari.</label>
 			<input type="text" required="required" class="form-control" name="nom" placeholder="nom">
         </div>
 
 
         <div class="form-group">
-            <label for="NewUserPass1">Marca del coche. </label>
+            <label for="NewUserPass1">Nom coche a opinar. </label>
             <input type="password" required="required"ss1 name="contrasena" class="form-control"placeholder="marca">
         </div>
 
+        
         <div class="form-group">
-            <label for="NewUserPass2">Cilindra del coche.</label>
-            <input type="password" required="required" class="form-control" id="NewUserPass2" placeholder="cilindra">
-        </div>
-        <div class="form-group">
-                <form  method="post" action="action.cgi" enctype="multipart/form-data">
-                   <input type="file" name="nombre" required="required">
-                </form> 
+               <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea> 
         </div>
         <input type="submit" value="puja" >
 

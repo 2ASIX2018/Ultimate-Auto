@@ -25,12 +25,14 @@
     <!-- Navigation -->
     <?php require_once("menu.php"); 
         ?>
-
+    
     <!-- Page Content -->
     <div class="container">
     <br>
 <br>
-<br>
+<br><div id="logout">
+        <a href="logout.php"> Tancar sesio</a>
+    </div>
       <!-- Page Heading -->
       <h1 class="my-4">Page Heading <br>
         <small>Secondary Text</small>
@@ -47,8 +49,8 @@
           <h3>Primer Coche</h3>
           <p>-Marca: SEAT</p>
           <p>-Modelo: PANDA</p>
-        <?php require("estrellitas.php");
-            ?>
+          <p>-Cilindra: </p>
+           <a href="opinions.php">Opinar</a>
      </div>
       </div>
       <!-- /.row -->
@@ -73,42 +75,7 @@
 
       <hr>
 
-      <!-- Project Three -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>Project Three</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-          <?php require("estrellitas.php");
-            ?>
-        </div>
-      </div>
-      <!-- /.row -->
 
-      <hr>
-
-      <!-- Project Four -->
-      <div class="row">
-
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>Project Four</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-          <?php require("estrellitas.php");
-            ?>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <hr>
 
      <!-- Pagination --><!--
       <ul class="pagination justify-content-center">
