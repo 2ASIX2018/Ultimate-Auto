@@ -40,14 +40,15 @@
                         <form class="form" action="comprobar.php" method="POST" >
                             <div class="form-group">
                                 <label for="username" class="text-white">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <input type="text" required="required" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-white">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="password" required="required" id="password" class="form-control">
                             </div>
                             <div class="checkbox">
-                              <input type="Checkbox" name="recordar" id="recordar" value="recordar"> Recorda'm en aquest ordinador                               
+                              <label><input type="Checkbox" name="recordar" id="recordar" value="recordar"> Recorda'm en aquest ordinador
+                              </label>          
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">

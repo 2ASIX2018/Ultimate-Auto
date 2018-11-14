@@ -15,32 +15,58 @@ $role=$_SESSION['role'];
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <?php
+          $userLabel= $user;
+          echo $userLabel ;
+          echo "";
+          echo "";
+          echo "";
+          ?>
+          </li>
+          <br>
+<?php
+    if ($role=='user'){
+?>
+<br>
+	    <li class="nav-item">
+              <a class="nav-link js-scroll-trigger"></a>
+            </li>
+                     <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="coches.php">Coches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="puj_coches.php">Administrar Coches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="logout.php">Cerrar Sesion</a>
+            </li>
+         
+<?php
+    } else if ($role=='admin') {
+?>
+ 
+         
+         
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="coches.php">Coches</a>
             </li>
-<?php
-    if ($role=='admin'){
-?>
-           <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="puj_coches.php">Administrar Coches</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="altausuarios.php">Usuarios</a>
             </li>
-<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="cerrar_session.php">Cerrar Sesion</a>
+	    <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="logout.php">Cerrar Sesion</a>
             </li>
 <?php
-    } else {
+} else {
 ?>
-
-            <li class="nav-item">
+	    <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="entrar2.php">Entrar</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="altausuarios.php">Usuarios</a>
-            </li>
-            <li class="nav-item">
+	    <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="registrar.php">Registrat</a>
             </li>
 <?php
