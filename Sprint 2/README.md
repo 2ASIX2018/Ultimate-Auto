@@ -167,7 +167,7 @@ I aquest es el codi:
 
 Aquesta es el nostre formulari de de opinions de cotxes:
 
-![Formulari opinions](imgs/opinions.png)
+![Formulari opinions](imgs/opinions.PNG)
 
 I aquest es el codi:
 
