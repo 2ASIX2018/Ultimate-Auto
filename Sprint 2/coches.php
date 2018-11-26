@@ -30,9 +30,6 @@
     <div class="container">
     <br>
 <br>
-<br><div id="logout">
-        <a href="logout.php"> Tancar sesio</a>
-    </div>
       <!-- Page Heading -->
       <h1 class="my-4">Page Heading <br>
         <small>Secondary Text</small>
@@ -50,7 +47,7 @@
           <p>-Marca: SEAT</p>
           <p>-Modelo: PANDA</p>
           <p>-Cilindra: </p>
-           <a href="opinions.php">Opinar</a>
+           <a <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"  href="opinions.php">Opinar</a>
      </div>
       </div>
       <!-- /.row -->
