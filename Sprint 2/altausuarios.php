@@ -145,7 +145,13 @@ while ($row=mysqli_fetch_array($result)) {
        echo '<tr><td>'.$row['NombreUusario'].'</td>';
        echo '<td>'.$row['Rol_usuario'].'</td>';
      
-?><td> <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> </td> <?php
+?><td> <form method='POST' action='EliminarUsuario.php'>
+      <input type='hidden' name='NombreUusario' value= <?php echo $row["NombreUusario"] ?> >
+      <input type='submit' class="btn btn-info btn-md" value='Eliminar'>
+      </form></td></tr>
+<!-- <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> -->
+
+<?php
 }
 mysqli_free_result($result);
 ?>
