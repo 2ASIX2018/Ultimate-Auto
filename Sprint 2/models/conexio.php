@@ -1,7 +1,7 @@
 <?php
 $connexio=array(
-    "servidor"=>"127.0.0.1",
+    "servidor"=>"localhost",
     "bd"=>"concesionario", 
     "usuari"=>"root", 
-    "contrassenya"=>"");
+    "contrasenya"=>"qwerty1");
 ?>

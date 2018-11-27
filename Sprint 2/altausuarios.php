@@ -112,7 +112,7 @@ td, th {
 }
 .titulo {
     margin-left: 40px;
-}
+    }
 </style>
 </head>
 <body>
@@ -124,34 +124,31 @@ td, th {
 <div>
 <h2 class="titulo"> Tabla de usuarios</h2>
 <br><br>
-<table class="tabla" >
-  <tr>
-    <th>Usuarios</th>
-    <th>Rol</th> 
-    <th>Eliminar</th>
-  </tr>
-  <tr>
-    <td>Admin</td>
-    <td>Adminstrador</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>User</td>
-    <td>Usuario</td>
-    <td><input type="submit" name="submit" class="btn btn-info btn-md" value="Eliminar"></td>
-  </tr>
-  <tr>
-    <td>User551</td>
-    <td>Usuario</td>
-    <td><input type="submit" name="submit" class="btn btn-info btn-md" value="Eliminar"></td>
-  </tr>
-</table>
+
 
 </div>
+<?php
+$conectar=mysqli_connect("localhost","root","qwerty1","concesionario") or die;
+$sql = "SELECT * FROM Usuarios";
+$result=mysqli_query($conectar, $sql) or die (mysqli_error);
+?>
 
+<table class="tabla">
+        <tr>
+        <th>USUARIOS </th>
+        <th>ROL </th>
+        </tr>
 
+<?php
 
-
+while ($row=mysqli_fetch_array($result)) {
+       echo '<tr><td>'.$row['NombreUusario'].'</td>';
+       echo '<td>'.$row['Rol_usuario'].'</td>';
+     
+?><td> <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> </td> <?php
+}
+mysqli_free_result($result);
+?>
 
 </body
 </html>

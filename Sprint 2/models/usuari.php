@@ -14,13 +14,11 @@ class Usuari{
             $role=false;
             while($fila=$consulta->fetch()){
                 $role=$fila[0];
-            }
+          }
             $db=null;
             return $role;
         } catch (Exception $e){
             echo("Error:".$e->getMessage());
             $db=null;
-        }
-    }
-}
-
+       }
+?>

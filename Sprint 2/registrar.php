@@ -26,7 +26,7 @@ session_start();
 <div class="main-div">
     <br>
     <br>
-    <form action="comprobar.php" method="GET" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
+    <form action="RegistrarUsuari.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
             <label for="NewUserName" >Usuari</label>
