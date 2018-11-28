@@ -37,10 +37,10 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
                     <div class="float">
-                        <form class="form" action="comprobar.php" method="POST" >
+                        <form class="form" action="comprobar.php" method="post" >
                             <div class="form-group">
-                                <label for="username" class="text-white">Username:</label><br>
-                                <input type="text" required="required" name="username" id="username" class="form-control">
+                                <label for="usuario" class="text-white">Username:</label><br>
+                                <input type="text" required="required" name="usuario" id="usuario" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-white">Password:</label><br>

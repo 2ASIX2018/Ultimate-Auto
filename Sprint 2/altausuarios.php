@@ -19,75 +19,6 @@
     margin: 200px 0;
 }
 
-.shape1{
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    float: left;
-    margin-right: -50px;
-}
-.shape2 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    margin-top: -30px;
-    float: left;
-}
-.shape3 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    margin-top: -30px;
-    float: left;
-    margin-left: -31px;
-}
-.shape4 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    margin-top: -25px;
-    float: left;
-    margin-left: -32px;
-}
-.shape5 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    float: left;
-    margin-right: -48px;
-    margin-left: -32px;
-    margin-top: -30px;
-}
-.shape6 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    float: left;
-    margin-right: -20px;
-    margin-top: -35px;
-}
-.shape7 {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    background-color: #0074d9;
-    border-radius: 80px;
-    float: left;
-    margin-right: -20px;
-    margin-top: -57px;
-}
 .float {
     position: absolute;
     z-index: 2;
@@ -128,9 +59,16 @@ td, th {
 
 </div>
 <?php
-$conectar=mysqli_connect("localhost","root","qwerty1","concesionario") or die;
-$sql = "SELECT * FROM Usuarios";
-$result=mysqli_query($conectar, $sql) or die (mysqli_error);
+require "conexio.php";
+$cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+$db = new PDO($cadenaConnexio, $connexio["Usuario"], $connexio["password"]); 
+
+
+
+$consulta = $db->prepare("SELECT * FROM Usuarios");
+
+$consulta->execute
+//$result=mysqli_query($, $consulta) or die (mysqli_error);
 ?>
 
 <table class="tabla">
@@ -141,19 +79,21 @@ $result=mysqli_query($conectar, $sql) or die (mysqli_error);
 
 <?php
 
-while ($row=mysqli_fetch_array($result)) {
-       echo '<tr><td>'.$row['NombreUusario'].'</td>';
-       echo '<td>'.$row['Rol_usuario'].'</td>';
+while ($row=mysqli_fetch_array($consulta)) {
+       echo '<tr><td>'.$row['usuario'].'</td>';
+       echo '<td>'.$row['Rol_Usuario'].'</td>';
      
 ?><td> <form method='POST' action='EliminarUsuario.php'>
-      <input type='hidden' name='NombreUusario' value= <?php echo $row["NombreUusario"] ?> >
+      <input type='hidden' name='usuario' value= <?php echo $row["usuario"] ?> >
       <input type='submit' class="btn btn-info btn-md" value='Eliminar'>
       </form></td></tr>
 <!-- <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> -->
 
 <?php
 }
-mysqli_free_result($result);
+mysqli_free_result($consulta);
+
+$db=null;
 ?>
 
 </body

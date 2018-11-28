@@ -3,5 +3,5 @@ $connexio=array(
     "servidor"=>"localhost",
     "bd"=>"concesionario", 
     "usuari"=>"root", 
-    "contrasenya"=>"qwerty1");
+    "contrasenya"=>"root");
 ?>

@@ -5,15 +5,15 @@ session_start();
 $user="Anonim";
 $role="";
 
-if (isset($_SESSION['username'])) {
-    $user=$_SESSION['username'];
+if (isset($_SESSION['usuario'])) {
+    $user=$_SESSION['usuario'];
     if (isset($_SESSION['role']) && $_SESSION['role']=="admin") $role="(Administrador)";
     else $role="";
 } else if (isset($COOKIE['UltimateAutoUser'])) {
-        $_SESSION['username'] = $_COOKIE['UltimateAutoUser'];
+        $_SESSION['usuario'] = $_COOKIE['UltimateAutoUser'];
         if (isset($_COOKIE['UltimateAutoRole'])) $_SESSION['role'] = $_COOKIE['UltimateAutoRole'];
         if ($_SESSION['role']=="admin") $role="(Administrador)"; else $role="";
-        $user=$_SESSION['username'];
+        $user=$_SESSION['usuario'];
 }
 $userLabel= $user.$role;
 ?>
@@ -56,7 +56,7 @@ $userLabel= $user.$role;
             <ul>
                 <li>Marcas.</li>
                 <li>Modelos.</li>
-                <li>Cilindra.</li>
+                <li>Any del coche.</li>
             </ul>
           </div>
 

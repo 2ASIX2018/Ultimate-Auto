@@ -4,10 +4,11 @@ class Usuari{
     public function validaUsuari($usuari, $pass){
         
         try{
-            require_once "connexio.php";
+            require_once "conexio.php";
             $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrassenya"]); 
-            $consulta = $db->prepare('SELECT rol FROM Usuari WHERE login = ? AND Password = ?');
+var_dump($connexio);
+            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]); 
+            $consulta = $db->prepare('SELECT Rol_Usuario FROM usuario WHERE usuario = ? AND Password = ?');
         
             $consulta->execute(array($usuari, $pass));
             
@@ -21,4 +22,6 @@ class Usuari{
             echo("Error:".$e->getMessage());
             $db=null;
        }
+}
+}
 ?>
