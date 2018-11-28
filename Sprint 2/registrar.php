@@ -29,14 +29,14 @@ session_start();
     <form action="RegistrarUsuari.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
-            <label for="NewUserName" >Usuari</label>
+            <label for="usuario" >Usuari</label>
 			<input type="text" required="required" class="form-control" name="usuario" placeholder="Usuari">
         </div>
 
 
         <div class="form-group">
             <label for="NewUserPass1">Contrasenya</label>
-            <input type="password" required="required"ss1 name="contrasena" class="form-control"placeholder="Contrassenya">
+            <input type="password" required="required"ss1 name="password" class="form-control"placeholder="contrassenya">
         </div>
 
         <div class="form-group">
