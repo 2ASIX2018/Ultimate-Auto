@@ -55,21 +55,46 @@ td, th {
 <div>
 <h2 class="titulo"> Tabla de usuarios</h2>
 <br><br>
+<?php
+echo "gfhybgf";
 
+?>
 
 </div>
 <?php
-require "conexio.php";
-$cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-$db = new PDO($cadenaConnexio, $connexio["Usuario"], $connexio["password"]); 
+//require_once "conexio.php";
+//$cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+//echo "wrfwrf";
+//$db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]); 
 
+//echo "rwgferw";
 
+//$consulta = $db->prepare("SELECT * FROM usuario");
 
-$consulta = $db->prepare("SELECT * FROM Usuarios");
-
-$consulta->execute
+//$consulta->execute(array($usuari));
 //$result=mysqli_query($, $consulta) or die (mysqli_error);
 ?>
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head><body>
+<?php
+// Conectamos con la base de datos
+
+$db = new PDO('mysql:host=localhost;dbname=concesionario;charset=utf8', 'root', 'root');
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+echo "ola";
+try {
+	$stmt = $db->prepare("SELECT * FROM usuario");
+	$stmt->execute( array());
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $ex) {
+    echo "Ocurrió un error<br>";
+    echo $ex->getMessage();
+    exit;
+}
+echo "ola";
+?>
+</body></html>
 
 <table class="tabla">
         <tr>
@@ -78,13 +103,13 @@ $consulta->execute
         </tr>
 
 <?php
-
-while ($row=mysqli_fetch_array($consulta)) {
-       echo '<tr><td>'.$row['usuario'].'</td>';
-       echo '<td>'.$row['Rol_Usuario'].'</td>';
-     
+echo "ola";
+while ($rows as $row) {
+       echo '<tr><td>'.$rows['usuario'].'</td>';
+       echo '<td>'.$rows['Rol_Usuario'].'</td>';
+   echo "ola";  
 ?><td> <form method='POST' action='EliminarUsuario.php'>
-      <input type='hidden' name='usuario' value= <?php echo $row["usuario"] ?> >
+      <input type='hidden' name='usuario' value= <?php echo $rows["usuario"] ?> >
       <input type='submit' class="btn btn-info btn-md" value='Eliminar'>
       </form></td></tr>
 <!-- <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> -->

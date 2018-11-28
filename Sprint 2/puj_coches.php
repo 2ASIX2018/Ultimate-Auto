@@ -18,16 +18,20 @@ session_start();
 
   </head>
 <body>
-<?php require_once("menu.php");  ?>
+<?php
+require_once("menu.php");  
+?>
 
 <div class="container">
-<h1 class="form-heading">Asi pots afegir un coches nou.</h1>
-
+<h1 class="form-heading"></h1>
+<br>
+<br>
+<br>
 <div class="main-div">
     <br>
     <br>
-    <form action="GuardaCoche.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
-       
+    <form action="GuardaCoche.php" method="POST" enctype="multipart/form-data" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
+
         <div class="form-group">
             <label for="NewUserName" >Nom del coche.</label>
 			<input type="text" required="required" class="form-control" name="nom" placeholder="nom">
@@ -36,24 +40,24 @@ session_start();
 
         <div class="form-group">
             <label for="NewUserPass1">Marca del coche. </label>
-            <input type="password" required="required"ss1 name="marca" class="form-control"placeholder="marca">
+            <input type="text" required="required"ss1 name="marca" class="form-control"placeholder="marca">
         </div>
 
         <div class="form-group">
             <label for="NewUserPass2">Año del coche.</label>
-            <input type="password" required="required" name="ano" class="form-control" id="NewUserPass2" placeholder="cilindra">
+            <input type="text" required="required" name="ano" class="form-control" id="NewUserPass2" placeholder="cilindra">
         </div>
-        
-        <div class="form-group"> 
-                   <label for="NewUserPass2">Imagen del coche.</label>
-                   <input type="file" name="nombre" required="required">
-        </div>
+
+        <!--<div class="form-group">
+                   <label for="NewUserPass3">Imagen del coche.</label>
+                   <input type="file" name="imagen" required="required">
+        </div> -->
         <input type="submit" value="puja" >
 
- 
-        
-        
 
-        </form>    
+
+
+
+        </form>
 
 </html>
