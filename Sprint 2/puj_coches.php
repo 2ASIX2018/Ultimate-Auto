@@ -26,7 +26,7 @@ session_start();
 <div class="main-div">
     <br>
     <br>
-    <form action="comprobar.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
+    <form action="GuardaCoche.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
             <label for="NewUserName" >Nom del coche.</label>
@@ -36,17 +36,17 @@ session_start();
 
         <div class="form-group">
             <label for="NewUserPass1">Marca del coche. </label>
-            <input type="password" required="required"ss1 name="contrasena" class="form-control"placeholder="marca">
+            <input type="password" required="required"ss1 name="marca" class="form-control"placeholder="marca">
         </div>
 
         <div class="form-group">
-            <label for="NewUserPass2">Cilindra del coche.</label>
-            <input type="password" required="required" class="form-control" id="NewUserPass2" placeholder="cilindra">
+            <label for="NewUserPass2">Año del coche.</label>
+            <input type="password" required="required" name="ano" class="form-control" id="NewUserPass2" placeholder="cilindra">
         </div>
-        <div class="form-group">
-                <form  method="post" action="action.cgi" enctype="multipart/form-data">
+        
+        <div class="form-group"> 
+                   <label for="NewUserPass2">Imagen del coche.</label>
                    <input type="file" name="nombre" required="required">
-                </form> 
         </div>
         <input type="submit" value="puja" >
 

@@ -1,7 +1,7 @@
 <?php
-class Noticia{
+class Coche{
     
-    public function afigCoche($nom, $marca, $modelo, $imgs){
+    public function afigCoche($nombrecoche, $marca, $ano, $imagen){
         
         try{
             require_once "connexio.php";
@@ -13,15 +13,15 @@ class Noticia{
             $consulta = $dbCon->prepare('INSERT INTO `coches`
             (`NombreCoche`,
             `Marca`,
-            `Modelo_idModelo`,
+            `Ano`,
             `imagen`,
                 VALUES (?, ?, ?, ?);');
             
             echo("<br/>NombreCoche:".$nom);
             echo("<br/>Marca:".$marca);
-            echo("<br/>Modelo_idModelo".$modelo);
+            echo("<br/>Ano".$ano);
             echo("<br/>imagen".$imgs);
-            $consulta->execute(array($nom, $marca, $modelo, $imgs));
+            $consulta->execute(array($nom, $marca, $ano, $imagen));
             print_r($dbCon->errorInfo());
             echo("Files afectades: ".$consulta->rowCount());
                         
