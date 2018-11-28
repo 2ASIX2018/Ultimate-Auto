@@ -43,83 +43,43 @@ td, th {
 }
 .titulo {
     margin-left: 40px;
+      height: 60px;
     }
 </style>
 </head>
-<body>
 
+<body>
 <?php 
-    require_once("menu.php");
-?>
-<br><br><br>
+        require_once("menu.php");
+    ?>
+<br>
+<br>
+<br>
 <div>
 <h2 class="titulo"> Tabla de usuarios</h2>
-<br><br>
-<?php
-echo "gfhybgf";
-
-?>
-
 </div>
-<?php
-//require_once "conexio.php";
-//$cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-//echo "wrfwrf";
-//$db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]); 
+<?php 
+        try{
+        require_once "models/conexio.php";
+            $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+            var_dump($connexio);
+            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
+             
+            $consulta = $db->prepare('SELECT usuario, Rol_Usuario FROM usuario'); 
 
-//echo "rwgferw";
+             $consulta->execute();
 
-//$consulta = $db->prepare("SELECT * FROM usuario");
-
-//$consulta->execute(array($usuari));
-//$result=mysqli_query($, $consulta) or die (mysqli_error);
-?>
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"></head><body>
-<?php
-// Conectamos con la base de datos
-
-$db = new PDO('mysql:host=localhost;dbname=concesionario;charset=utf8', 'root', 'root');
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-echo "ola";
-try {
-	$stmt = $db->prepare("SELECT * FROM usuario");
-	$stmt->execute( array());
-	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch(PDOException $ex) {
-    echo "Ocurrió un error<br>";
-    echo $ex->getMessage();
-    exit;
-}
-echo "ola";
-?>
-</body></html>
-
-<table class="tabla">
-        <tr>
-        <th>USUARIOS </th>
-        <th>ROL </th>
-        </tr>
-
-<?php
-echo "ola";
-while ($rows as $row) {
-       echo '<tr><td>'.$rows['usuario'].'</td>';
-       echo '<td>'.$rows['Rol_Usuario'].'</td>';
-   echo "ola";  
-?><td> <form method='POST' action='EliminarUsuario.php'>
-      <input type='hidden' name='usuario' value= <?php echo $rows["usuario"] ?> >
-      <input type='submit' class="btn btn-info btn-md" value='Eliminar'>
-      </form></td></tr>
-<!-- <a href="EliminarUsuario.php"><input type="button" value="Eliminar"  class="btn btn-info btn-md"></a> -->
-
-<?php
-}
-mysqli_free_result($consulta);
-
-$db=null;
-?>
-
-</body
+            while($fila=$consulta->fetch()){
+               
+            echo "Usuario: {$fila["usuario"]}<br>";
+            echo "Rol: {$fila["Rol_Usuario"]}<br>";
+        $db=null;
+        }
+       }
+        catch (Exception $e){
+            echo("Error:".$e->getMessage());
+            $db=null;
+       }
+    ?>
+</body>
 </html>

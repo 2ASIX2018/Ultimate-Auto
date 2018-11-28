@@ -31,47 +31,34 @@
     <br>
 <br>
       <!-- Page Heading -->
-      <h1 class="my-4">Page Heading <br>
-        <small>Secondary Text</small>
-      </h1>
-
+      <h1 class="my-4">Pagina de coches<br></h1>
+        
+      
+<br>
       <!-- Project One -->
       <div class="row">
         <div class="col-md-7">
-          <a href="#">
+          
+        <?php
+                require_once("models/coches_adm.php");
+                $admcoches=new coche();
+                $coches=$admcoches->listarcoches();
+
+    
+
+
             <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>Primer Coche</h3>
-          <p>-Marca: SEAT</p>
-          <p>-Modelo: PANDA</p>
-          <p>-Cilindra: </p>
+          
+        
+        
+          
            <a <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"  href="opinions.php">Opinar</a>
-     </div>
-      </div>
+           </div>
       <!-- /.row -->
 
       <hr>
 
-      <!-- Project Two -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>Project Two</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-          <?php require("estrellitas.php");
-            ?>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <hr>
-
+     
 
 
      <!-- Pagination --><!--

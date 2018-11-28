@@ -8,6 +8,8 @@ class Usuari{
             $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
 var_dump($connexio);
             $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]); 
+
+
             $consulta = $db->prepare('SELECT Rol_Usuario FROM usuario WHERE usuario = ? AND Password = ?');
         
             $consulta->execute(array($usuari, $pass));
@@ -23,5 +25,6 @@ var_dump($connexio);
             $db=null;
        }
 }
+    
 }
 ?>

@@ -1,17 +1,33 @@
 <?php
 session_start();
 
-require_once "models/conexio.php";
-
-$username=$_POST["usuario"];
-$password=$_POST["contrasena"];
+$user=$_POST["usuario"];
+$password=$_POST["password"];
 $Rol_usuari=user;
-    //Conexion con la base
- 
-$connexio= mysqli_connect("localhost","root","qwerty1","concesionario") or die ("ola");
-//Ejecucion de la sentencia SQL
-$query= "insert into Usuarios (NombreUusario, Password, Rol_usuario) values('$username','$password','$Rol_usuari')";
-$result=mysqli_query($connexio, $query);
-header("location: indexx.php");
+    
+
+    try {
+    require_once "conexio.php";
+           $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+    var_dump($connexio);
+           $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]); 
+            
+            
+            $consulta = $db->prepare('INSERT INTO `usuario` (`usuario`, `password`, `Rol_Usuario`) VALUES(?,?,?)';
+            
+            
+       
+         if ($consulta->execute()){
+    header("location: indexx.php");
+}
+
+        }
+            
+            catch (Exception $e){
+            echo("Error:".$e->getMessage());
+            $db=null;
+       }
+
+
 
 ?>
