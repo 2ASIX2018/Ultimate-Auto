@@ -35,6 +35,10 @@ $role=$_SESSION['role'];
                      <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="coches.php">Coches</a>
             </li>
+            </li>
+                     <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="opinions.php">Opinions</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="puj_coches.php">Administrar Coches</a>
             </li>
@@ -50,6 +54,10 @@ $role=$_SESSION['role'];
          
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="coches.php">Coches</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="opinions.php">Opinions</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="puj_coches.php">Administrar Coches</a>

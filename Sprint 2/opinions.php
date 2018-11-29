@@ -18,8 +18,15 @@ session_start();
 
   </head>
 <body>
-<?php require_once("menu.php");  ?>
+<?php 
 
+require_once("menu.php"); 
+
+$user=$_SESSION['usuario'];
+echo $user;
+ ?>
+<br>
+<br><p></p>
 <div class="container">
 <h1 class="form-heading">Asi pots donar la teua opinio.</h1>
 
@@ -29,8 +36,8 @@ session_start();
     <form action="comprobar.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
-            <label for="NewUserName" >Nom del usuari.</label>
-			<input type="text" required="required" class="form-control" name="nom" placeholder="nom">
+            <h2 strong><?php echo $user; ?></h2>
+			
         </div>
 
 
