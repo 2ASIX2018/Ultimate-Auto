@@ -22,7 +22,6 @@ session_start();
 
 require_once("menu.php"); 
 
-$user=$_SESSION['usuario'];
 echo $user;
  ?>
 <br>
@@ -33,7 +32,7 @@ echo $user;
 <div class="main-div">
     <br>
     <br>
-    <form action="comprobar.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
+    <form action="GuardarOpinion.php" method="POST" id="userManager" class="col-md-6 col-md-offset-4 col-sm-offset-4 col-sm-6">
        
         <div class="form-group">
             <h2 strong><?php echo $user; ?></h2>
@@ -43,12 +42,12 @@ echo $user;
 
         <div class="form-group">
             <label for="NewUserPass1">Nom coche a opinar. </label>
-            <input type="password" required="required"ss1 name="contrasena" class="form-control"placeholder="marca">
+            <input type="text" required="required"ss1 name="marca" class="form-control"placeholder="marca">
         </div>
 
         
         <div class="form-group">
-               <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea> 
+               <textarea name="comentarios" rows="10"  cols="40">Escribe aquí tus comentarios</textarea> 
         </div>
         <input type="submit" value="puja" >
 
