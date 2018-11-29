@@ -60,7 +60,7 @@ class Coche{
 		$dbCon=null;
 }
 }
-}
+
 
         public function listarcoches(){
         try{
