@@ -36,7 +36,7 @@ table {
     width: 75%;
     font-family: arial, sans-serif;
 }
-td, th {
+td, tr {
     border: 1px;
     text-align: center;
     padding: 8px;
@@ -70,9 +70,15 @@ td, th {
              $consulta->execute();
 
             while($fila=$consulta->fetch()){
-               
-            echo "Usuario: {$fila["usuario"]}<br>";
-            echo "Rol: {$fila["Rol_Usuario"]}<br>";
+               ?>
+                <table>
+                    <tr>
+                         <td> <?php echo "Usuario: {$fila["usuario"]}<br>"; ?></td>
+                         <td> <?php echo "Rol: {$fila["Rol_Usuario"]}<br>"; ?></td>
+                         <td>  <form action="EliminarUsuario.php" method="post"> <input type="Reset" value="Borrar">
+                    </tr>
+                </table>
+        <?php
         $db=null;
         }
        }
