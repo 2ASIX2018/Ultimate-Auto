@@ -40,14 +40,42 @@
         <div class="col-md-7">
           
         <?php
-                require_once("models/coches_adm.php");
-                $admcoches=new coche();
-                $coches=$admcoches->listarcoches();
+                try{
+        require_once "models/conexio.php";
+            $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+            var_dump($connexio);
+            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
+             
+            $consulta = $db->prepare('SELECT nombrecoche, marca, ano FROM coches'); 
 
+             $consulta->execute();
+
+            while($fila=$consulta->fetch()){
+               ?>
+                <table>
+                    <tr> 
+                        <td colspan="4"> <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt=""></td>
+                    </tr>
+                    <tr>
+                         <td> <?php echo "Usuario: {$fila["nombrecoche"]}<br>"; ?></td>
+                         <td> <?php echo "Rol: {$fila["marca"]}<br>"; ?></td>
+                         <td> <?php echo "Rol: {$fila["ano"]}<br>"; ?></td>
+                         <td> <a <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"  href="opinions.php">Opinar</a> </td>
+                    </tr>
+                </table>
+        <?php
+        $db=null;
+        }
+       }
+        catch (Exception $e){
+            echo("Error:".$e->getMessage());
+            $db=null;
+       }
+    ?>
     
 
 
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+           
           
         
         
