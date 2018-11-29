@@ -43,26 +43,29 @@
                 try{
         require_once "models/conexio.php";
             $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-            var_dump($connexio);
+            //var_dump($connexio);
             $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
              
-            $consulta = $db->prepare('SELECT nombrecoche, marca, ano FROM coches'); 
+            $consulta = $db->prepare('SELECT nombrecoche, marca, ano FROM Coches'); 
 
              $consulta->execute();
 
             while($fila=$consulta->fetch()){
                ?>
-                <table>
-                    <tr> 
+               <div style="text-align:center;">
+                <table style="margin: 0 auto;">
+                    <tr > 
                         <td colspan="4"> <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt=""></td>
                     </tr>
+                    <br/>
                     <tr>
-                         <td> <?php echo "Usuario: {$fila["nombrecoche"]}<br>"; ?></td>
-                         <td> <?php echo "Rol: {$fila["marca"]}<br>"; ?></td>
-                         <td> <?php echo "Rol: {$fila["ano"]}<br>"; ?></td>
+                         <td> <?php echo "Nombre del coche: {$fila["nombrecoche"]}<br>"; ?></td>
+                         <td> <?php echo "Marca: {$fila["marca"]}<br>"; ?></td>
+                         <td> <?php echo "Año: {$fila["ano"]}<br>"; ?></td>
                          <td> <a <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"  href="opinions.php">Opinar</a> </td>
                     </tr>
                 </table>
+                </div>
         <?php
         $db=null;
         }
@@ -80,7 +83,7 @@
         
         
           
-           <a <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"  href="opinions.php">Opinar</a>
+
            </div>
       <!-- /.row -->
 
@@ -116,10 +119,6 @@
 
     </div> -->
     <!-- /.container -->
-
-    <!-- Footer -->
-    <?php require_once("footer.php");
-    ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

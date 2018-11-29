@@ -62,7 +62,7 @@ td, tr {
         try{
         require_once "models/conexio.php";
             $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-            var_dump($connexio);
+            //var_dump($connexio);
             $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
              
             $consulta = $db->prepare('SELECT usuario, Rol_Usuario FROM usuario'); 

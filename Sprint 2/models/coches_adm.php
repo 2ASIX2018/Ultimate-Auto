@@ -29,6 +29,39 @@ class Coche{
 	}
 }
 
+	public function llistaCoches(){
+	
+	try{
+	require_once "conexio.php";
+	
+	$cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+	$dbCon = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
+	$dbCon ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$consulta= $dbCon->prepare('SELECT nombrecoche, marca, ano FROM Coches');
+		
+	$consulta->execute();
+	$coches=array();
+	
+	while($fila=$consulta->fetch()) {
+		$coche["Nombrecoche"]=$fia[0];
+		$coche["marca"]=$fia[1];
+		$coche["ano"]=$fia[2];
+		
+		array_push($coches, $coche);
+	}
+		
+	
+	$dbCon=null;
+	
+	return $coches;
+	
+	} catch (PDOException $e) {
+		echo("Error:".$e->getMessage());
+		$dbCon=null;
+}
+}
+}
+
         public function listarcoches(){
         try{
             require_once "connexio.php";
@@ -39,7 +72,7 @@ class Coche{
             $dbCon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Preparem la consulta
-            $consulta = $dbCon->prepare('SELECT nombrecoche, marca, ano FROM coches ');
+            $consulta = $dbCon->prepare('SELECT nombrecoche, marca, ano FROM Coches ');
 
             // Executem la consulta
             $consulta->execute();
