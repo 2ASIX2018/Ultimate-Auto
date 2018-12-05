@@ -55,37 +55,50 @@ td, tr {
 <br>
 <br>
 <br>
+ <?php
+   
+    require_once("models/usuari.php");
+    
+    ?>
 <div>
 <h2 class="titulo"> Tabla de usuarios</h2>
 </div>
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Usuari</th>
+        <th>Rol</th>
+        <th> </th>
+        <th>Gestionar</th>
+      </tr>
+    </thead>
+
+    <tbody>
 <?php 
-        try{
-        require_once "models/conexio.php";
-            $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
-            //var_dump($connexio);
-            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
-             
-            $consulta = $db->prepare('SELECT usuario, Rol_Usuario FROM usuario'); 
+$GestorUsuarios=new Usuari();
+$Usuarios=$GestorUsuarios->llistaUsuari();
+ for ($i=0; $i<count($Usuarios); $i++) {
+    if ($i%2==0) {
+        $clase="table-light";
+    } else {
+        $clase="table-info"; 
+}
+ ?>
 
-             $consulta->execute();
+<tr class=<?php echo ($clase); ?>>
+        <td> <?php echo($Usuarios[$i]["usuario"]) ?></td>
+        <td> <?php echo($Usuarios[$i]["password"]) ?></td>
+        <td> <?php echo($Usuarios[$i]["Rol_Usuario"]) ?></td>
+        <td>        
+        <form aclass="form" action="EliminarUsuario.php" method="post">
+        <input type="button" value="Eliminar">
+        </form> </td>
+</tr>
 
-            while($fila=$consulta->fetch()){
-               ?>
-                <table>
-                    <tr>
-                         <td> <?php echo "Usuario: {$fila["usuario"]}<br>"; ?></td>
-                         <td> <?php echo "Rol: {$fila["Rol_Usuario"]}<br>"; ?></td>
-                         <td>  <form action="EliminarUsuario.php" method="post"> <input type="Reset" value="Borrar">
-                    </tr>
-                </table>
-        <?php
-        $db=null;
-        }
-       }
-        catch (Exception $e){
-            echo("Error:".$e->getMessage());
-            $db=null;
-       }
-    ?>
+<?php 
+}
+?>
+  </tbody>
+  </table>
 </body>
 </html>

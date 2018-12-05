@@ -1,7 +1,7 @@
 <?php
 class Usuari{
     
-    public function validaUsuari($usuari, $pass){
+    public function validaUsuari($user, $pass){
         
         try{
             require_once "conexio.php";
@@ -12,7 +12,7 @@ var_dump($connexio);
 
             $consulta = $db->prepare('SELECT Rol_Usuario FROM usuario WHERE usuario = ? AND Password = ?');
         
-            $consulta->execute(array($usuari, $pass));
+            $consulta->execute(array($user, $pass));
             
             $role=false;
             while($fila=$consulta->fetch()){
@@ -54,8 +54,34 @@ var_dump($connexio);
 		$dbCon=null;
 	}
 }
+    public function llistaUsuari(){
+    try{
+        require_once "conexio.php";
+            $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
+            //var_dump($connexio);
+            $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrasenya"]);
+             
+            $consulta = $db->prepare('SELECT usuario, Rol_Usuario FROM usuario'); 
 
+             $consulta->execute();
+             $usuarios=array();
+            while($fila=$consulta->fetch()){
+                $usuario["usuario"]=$fila[0];
+                $usuario["password"]=$fila[1];
+                $usuario["Rol_Usuario"]=$fila[2];
 
+                array_push($usuarios, $usuario);
+            }
+
+        $db=null;
+
+        return $usuarios;
+
+       } catch (Exception $e){
+            echo("Error:".$e->getMessage());
+            $db=null;
+       }
     
+}
 }
 ?>
